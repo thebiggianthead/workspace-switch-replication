@@ -9,8 +9,7 @@ import {defineConfig, defineType, defineField} from 'sanity'
 import {structureTool} from 'sanity/structure'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import {apiVersion, dataset, projectId} from './src/sanity/env'
-import { schema } from './src/sanity/schema'
+import {projectId} from './src/sanity/env'
 
 const schemaTypes = [
   defineType({
@@ -32,7 +31,7 @@ export default defineConfig([{
   projectId,
   dataset: 'client-1',
 
-  plugins: [structureTool()],
+  plugins: [structureTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
@@ -46,7 +45,7 @@ export default defineConfig([{
   projectId,
   dataset: 'client-2',
 
-  plugins: [structureTool()],
+  plugins: [structureTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
